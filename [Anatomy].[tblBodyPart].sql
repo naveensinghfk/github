@@ -32,14 +32,6 @@ CREATE TABLE [Anatomy].[tblBodyPart](
 GO
 ALTER TABLE [Anatomy].[tblBodyPart] ADD  CONSTRAINT [DF_tblBodyPart_CreatedDate]  DEFAULT (getdate()) FOR [CreatedDate]
 GO
-ALTER TABLE [Anatomy].[tblBodyPart] ADD  CONSTRAINT [DF_tblBodyPart_UpdatedDate]  DEFAULT (getdate()) FOR [UpdatedDate]
-GO
-ALTER TABLE [Anatomy].[tblBodyPart] ADD  CONSTRAINT [DF_tblBodyPart_IsVisible]  DEFAULT ((1)) FOR [IsVisible]
-GO
-ALTER TABLE [Anatomy].[tblBodyPart] ADD  CONSTRAINT [DF_tblBodyPart_IsMale]  DEFAULT ((0)) FOR [IsMale]
-GO
-ALTER TABLE [Anatomy].[tblBodyPart] ADD  CONSTRAINT [DF_tblBodyPart_IsFeMale]  DEFAULT ((0)) FOR [IsFemale]
-GO
 ALTER TABLE [Anatomy].[tblBodyPart]  WITH CHECK ADD  CONSTRAINT [FK_tblBodyPart_tblUser] FOREIGN KEY([CreatedBy])
 REFERENCES [UserManagement].[tblUser] ([UserId])
 GO
